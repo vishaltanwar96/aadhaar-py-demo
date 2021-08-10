@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Aadhaar Secure QR Decoder{% endblock %}
+{% block body %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  {{ message }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<div class="text-center"><a href="https://www.thomasbilliet.com/react-qr-reader/">Scan from here</a></div>
+<form method="POST" action="{{ url_for('core.index') }}">
+    {{ form.csrf_token }}
+    <div class="text-center">{{ form.qr_code_data.label }}</div><br>
+    <div class="text-center">{{ form.qr_code_data }}</div><br>
+    <div class="text-center"><input class="btn btn-primary" type="submit" value="Decode"></div>
+</form>
+{% endblock %}

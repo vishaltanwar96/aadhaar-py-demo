@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block title %}QR Decoded Data{% endblock %}
+{% block body %}
+<div class="text-center">
+<h1>QR Decoded Data</h1>
+<div class="container-fluid">
+<table class="table table-hover fs-5">
+<tr class="row">
+    <td class="col">Reference ID</td>
+    <td class="col">{{ qr_code_data.reference_id }}</td>
+</tr>
+<tr class="row">
+    <td class="col">Name</td>
+    <td class="col">{{ qr_code_data.name }}</td>
+</tr>
+    <tr class="row">
+        <td class="col">Date of Birth</td>
+        <td class="col">{{ qr_code_data.dob }}</td>
+    </tr>
+<tr class="row">
+    <td class="col">Gender</td>
+    <td class="col">{{ 'Male' if qr_code_data.gender == 'M' else 'Female' }}</td>
+</tr>
+<tr class="row">
+    <td class="col">Care Of</td>
+    <td class="col">{{ qr_code_data.care_of }}</td>
+</tr>
+<tr class="row">
+    <td class="col">District</td>
+    <td class="col">{{ qr_code_data.district }}</td>
+</tr>
+<tr class="row">
+    <td class="col">Landmark</td>
+    <td class="col">{{ qr_code_data.landmark }}</td>
+</tr>
+<tr class="row">
+    <td class="col">House</td>
+    <td class="col">{{ qr_code_data.house }}</td>
+</tr>
+<tr class="row">
+    <td class="col">Location</td>
+    <td class="col">{{ qr_code_data.location }}</td>
+</tr>
+<tr class="row">
+    <td class="col">Pincode</td>
+    <td class="col">{{ qr_code_data.pincode }}</td>
+</tr>
+<tr class="row">
+    <td class="col">Post Office</td>
+    <td class="col">{{ qr_code_data.post_office }}</td>
+</tr>
+<tr class="row">
+    <td class="col">State</td>
+    <td class="col">{{ qr_code_data.state }}</td>
+</tr>
+<tr class="row">
+    <td class="col">Street</td>
+    <td class="col">{{ qr_code_data.street }}</td>
+</tr>
+<tr class="row"><td class="col">Sub District: </td><td class="col">{{ qr_code_data.sub_district }}</td></tr>
+<tr class="row">
+    <td class="col">VTC</td>
+    <td class="col">{{ qr_code_data.vtc }}</td>
+</tr>
+<tr class="row">
+    <td class="col">Photo</td>
+    <td class="col"><img src="data:image/jpeg;base64, {{qr_code_data.photo}}" alt="Photo"></td>
+</tr>
+<tr class="row">
+    <td class="col">Email Present</td>
+    <td class="col">{{ qr_code_data.is_email_present }}</td>
+</tr>
+<tr class="row">
+    <td class="col">Mobile Present</td>
+    <td class="col">{{ qr_code_data.is_mobile_present }}</td>
+</tr>
+</table>
+</div>
+    </div>
+{% endblock %}
