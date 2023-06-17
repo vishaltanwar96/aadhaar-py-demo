@@ -1,6 +1,6 @@
 from flask.blueprints import Blueprint
 
-from app.views import IndexView
+from views import IndexView
 
 
 core = Blueprint('core', __name__)

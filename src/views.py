@@ -3,7 +3,7 @@ from flask import render_template, request, flash
 from aadhaar.qr import AadhaarSecureQR
 
 
-from app.forms import QRCodeInputForm
+from forms import QRCodeInputForm
 
 
 class IndexView(View):

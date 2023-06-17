@@ -3,7 +3,7 @@ import os
 from flask import Flask
 from flask_wtf.csrf import CSRFProtect
 
-from app.blueprints import core
+from blueprints import core
 
 app = Flask(__name__)
 CSRFProtect(app)
